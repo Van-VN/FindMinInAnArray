@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Tìm giá trị nhỏ nhất trong một Array do user khởi tạo.</h2>
+    <button onclick="arrayCheck()">Click to start</button>
+  </body>
+</html>
+<script>
+  let arr = [];
+  function arrayCheck() {
+    arr.splice(0, arr.length);
+    let arrLength = +prompt("Nhập chiều dài Array muốn khởi tạo.");
+    if (arrLength < 0 || isNaN(arrLength)) {
+      alert("Vui lòng nhập lại, giá trị nhập vào không đúng!");
+    } else if (arrLength === 0) {
+      alert("Array rỗng");
+    } else {
+      for (let i = 0; i < arrLength; i++) {
+        let inputValue = prompt(
+          `Nhập vào dữ liệu trong Array, còn ${arrLength - i} lần nhập...`
+        );
+        arr.push(inputValue);
+      }
+    }
+    function findMinInArray() {
+      arr.sort(function (a, b) {
+        return a - b;
+      });
+    }
+    findMinInArray();
+    alert(`Giá trị nhỏ nhất trong Array đã nhập:\n${arr}\nLà: ${arr[0]}`);
+  }
+</script>

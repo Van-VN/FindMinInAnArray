@@ -34,6 +34,10 @@
       });
     }
     findMinInArray();
-    alert(`Giá trị nhỏ nhất trong Array đã nhập:\n${arr}\nLà: ${arr[0]}`);
+    if (arr.length === 0) {
+      alert("Array rỗng, không có phần tử bên trong.");
+    } else {
+      alert(`Giá trị nhỏ nhất trong Array đã nhập:\n${arr}\nLà: ${arr[0]}`);
+    }
   }
 </script>
